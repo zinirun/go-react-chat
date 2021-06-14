@@ -1,10 +1,11 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"net/http"
 
-	"github.com/TutorialEdge/realtime-chat-go-react/pkg/websocket"
+	"github.com/zinirun/go-react-chat/pkg/websocket"
 )
 
 func serveWs(w http.ResponseWriter, r *http.Request) {
@@ -27,4 +28,5 @@ func setupRoutes() {
 func main() {
 	setupRoutes()
 	http.ListenAndServe(":8080", nil)
+	fmt.Println("Server listening on port 8080")
 }

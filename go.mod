@@ -1,4 +1,4 @@
-module github.com/TutorialEdge/realtime-chat-go-react
+module github.com/zinirun/go-react-chat
 
 go 1.15
 
