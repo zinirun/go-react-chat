@@ -1,2 +1,2 @@
 # go-react-chat
- First Go API practices with React
+ First Go WebSocket practices with React
