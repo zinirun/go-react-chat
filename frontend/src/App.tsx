@@ -10,16 +10,19 @@ function App() {
     });
   }, [chatHistory]);
 
-  const handleSend = () => {
-    sendMsg("hello");
+  const handleSend = (e: any) => {
+    if (e.keyCode === 13) {
+      sendMsg(e.target.value);
+      e.target.value = "";
+    }
   };
 
   return (
     <div>
-      {chatHistory.map((message: any, idx: number) => (
-        <div key={idx}>{message.data}</div>
+      {chatHistory.map((message: MessageEvent, idx: number) => (
+        <div key={idx}>{JSON.parse(message.data).body}</div>
       ))}
-      <button onClick={handleSend}>Hit</button>
+      <input onKeyDown={handleSend} />
     </div>
   );
 }
