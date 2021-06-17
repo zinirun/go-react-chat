@@ -7,6 +7,8 @@ import (
 	"github.com/zinirun/go-react-chat/pkg/websocket"
 )
 
+const PORT int = 8080
+
 func serveWs(pool *websocket.Pool, w http.ResponseWriter, r *http.Request) {
 	fmt.Println("WebSocket Endpoint Hit")
 	conn, err := websocket.Upgrade(w, r)
@@ -33,7 +35,7 @@ func setupRoutes() {
 }
 
 func main() {
-	fmt.Println("Go Chat v0.1")
+	fmt.Println("Go Chat v0.1: Listening port on " + fmt.Sprint(PORT))
 	setupRoutes()
 	http.ListenAndServe(":8080", nil)
 }
